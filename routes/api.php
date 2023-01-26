@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/bolsas', [bolsasController::class, 'getBolsas']);
+Route::post('/bolsas/contacto', [bolsasController::class, 'contacto']);
