@@ -14,7 +14,8 @@ class bolsasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getBolsas(){
-        $bolsas = bolsas::get();
+        $bolsas = bolsas::join('categoria','categoria.id_categoria','=', 'bolsas.categoria')
+                ->get();
         return $bolsas;
     }
     public function contacto(Request $request){

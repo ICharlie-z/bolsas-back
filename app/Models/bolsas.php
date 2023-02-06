@@ -9,4 +9,8 @@ class bolsas extends Model
 {
     protected $table = 'bolsas';
     protected $primaryKey = 'id';
+    public function categoria()
+    {
+        return $this->hasMany(categoria::class);
+    }
 }
