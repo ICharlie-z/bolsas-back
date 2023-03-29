@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\bolsasController;
+use App\Http\Controllers\productosController;
+use App\Http\Controllers\categoriaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/bolsas', [bolsasController::class, 'getBolsas']);
-Route::post('/bolsas/contacto', [bolsasController::class, 'contacto']);
+Route::get('/products', [productosController::class, 'getProducts']);
+Route::get('/allproducts', [productosController::class, 'getAllProducts']);
+Route::get('/products/{id}', [productosController::class, 'getProduct']);
+Route::post('/contacto', [productosController::class, 'contacto']);
+Route::get('/categorias', [categoriaController::class, 'obtenerCategorias']);
+Route::post('/agregar', [productosController::class, 'agregarProducto']);
+Route::delete('/eliminar', [productosController::class, 'eliminarProducto']);
